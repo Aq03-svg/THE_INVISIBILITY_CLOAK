@@ -155,3 +155,12 @@ This approach works regardless of clothing color or texture.
 ### 📌 Note
 
 Mode 2 complements Mode 1 by providing a **more robust and general invisibility solution**, demonstrating the use of both **classical machine learning** and **deep learning** approaches within the same system.
+
+👨‍💻 Author
+
+Aqeeb Javeed Shaikh
+Machine Learning & AI Enthusiast
+
+⭐ If you like this project
+
+Give it a ⭐ on GitHub!
