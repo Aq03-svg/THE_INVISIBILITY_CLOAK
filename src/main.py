@@ -1,3 +1,4 @@
+from mode_segmentation import HumanSegmenter
 import cv2
 from utils.camera import get_camera
 from utils.background import capture_background
@@ -46,25 +47,37 @@ while True:
         exit()
 
 # -------- MAIN CLOAK LOOP --------
+segmenter = HumanSegmenter()
+
+MODE = "SEGMENT"   # "COLOR" or "SEGMENT"
+
 while True:
     ret, frame = cap.read()
     if not ret:
         break
 
     frame = cv2.flip(frame, 1)
-    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    mask = cv2.inRange(hsv, lower, upper)
-    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, None)
-    mask = cv2.morphologyEx(mask, cv2.MORPH_DILATE, None)
+    if MODE == "COLOR":
+        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    cloak = cv2.bitwise_and(background, background, mask=mask)
-    rest = cv2.bitwise_and(frame, frame, mask=cv2.bitwise_not(mask))
-    output = cloak + rest
+        mask = cv2.inRange(hsv, lower, upper)
+        mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, None)
+        mask = cv2.morphologyEx(mask, cv2.MORPH_DILATE, None)
+
+        cloak = cv2.bitwise_and(background, background, mask=mask)
+        rest = cv2.bitwise_and(frame, frame, mask=cv2.bitwise_not(mask))
+        output = cloak + rest
+
+        label = "Mode 1: ML Color Cloak"
+
+    else:
+        output = segmenter.apply(frame, background)
+        label = "Mode 2: Human Segmentation Cloak"
 
     cv2.putText(
         output,
-        "Mode: ML Color | Press Q to quit",
+        f"{label} | Press Q to quit",
         (20, 40),
         cv2.FONT_HERSHEY_SIMPLEX,
         1,
