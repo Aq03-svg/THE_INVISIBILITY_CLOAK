@@ -156,6 +156,8 @@ This approach works regardless of clothing color or texture.
 
 Mode 2 complements Mode 1 by providing a **more robust and general invisibility solution**, demonstrating the use of both **classical machine learning** and **deep learning** approaches within the same system.
 
+> **Note:** To run only the ML-based adaptive color cloak, set `MODE = "COLOR"` in `main.py`.
+
 👨‍💻 Author
 ```
 Aqeeb Javeed Shaikh
