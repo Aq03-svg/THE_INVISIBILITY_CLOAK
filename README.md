@@ -46,6 +46,7 @@ The system operates in real time using a webcam and adapts to different cloak co
 ---
 
 ## 📂 Project Structure
+'''
 
 THE_INVISIBILITY_CLOAK/
 │
@@ -72,3 +73,4 @@ THE_INVISIBILITY_CLOAK/
 ├── .gitignore                      # Files/folders ignored by Git
 │
 └── venv/                           # Virtual environment (NOT pushed)
+'''
