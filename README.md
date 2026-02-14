@@ -48,12 +48,27 @@ The system operates in real time using a webcam and adapts to different cloak co
 ## 📂 Project Structure
 
 THE_INVISIBILITY_CLOAK/
-├── src/
-│   ├── main.py                # Main application logic
-│   ├── mode_color_ml.py       # ML-based color learning (K-Means)
-│   └── utils/
-│       ├── camera.py          # Webcam initialization
-│       └── background.py      # Background capture logic
-├── requirements.txt
-├── README.md
-└── .gitignore
+│
+├── src/                            # All source code
+│   │
+│   ├── main.py                     # Entry point (mode selector & pipeline)
+│   │
+│   ├── mode_color_ml.py            # Mode 1: ML-based adaptive color cloak
+│   │
+│   ├── mode_segmentation.py        # Mode 2: Human segmentation cloak (future)
+│   │
+│   └── utils/                      # Reusable helper modules
+│       │
+│       ├── camera.py               # Webcam initialization & handling
+│       ├── background.py           # Background capture logic
+│       └── __init__.py             # Makes utils a package
+│
+├── demo_output/                    # Screenshots / demo GIFs (optional)
+│
+├── requirements.txt                # Python dependencies
+│
+├── README.md                       # Project documentation
+│
+├── .gitignore                      # Files/folders ignored by Git
+│
+└── venv/                           # Virtual environment (NOT pushed)
