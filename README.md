@@ -15,7 +15,6 @@ This project recreates the invisibility cloak illusion by **learning the cloak c
 
 ---
 
-## 📌 Project Overview
 
 Traditional invisibility cloak implementations rely on **hardcoded color thresholds** (e.g., red cloak), which fail under varying lighting conditions.  
 This project improves robustness by using **Machine Learning (K-Means clustering)** to automatically learn the cloak color from the video feed.
